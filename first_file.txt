@@ -1,3 +1,0 @@
-This is a test file.
-
-Can one choose what kind of extension it is? How does one create JavaScript files or HTML files? Can one simply write code already?
