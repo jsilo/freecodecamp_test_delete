@@ -52,14 +52,6 @@ else
 
       IFS="|" read -r -a result_properties_array <<<"$result_properties"
 
-      for word in "${result_elements_array[@]}"; do
-        echo -e "Looping through elements of result_elements_array. Current element is: $word\n"
-      done
-
-      for word in "${result_properties_array[@]}"; do
-        echo -e "Looping through elements of result_properties_array. Current element is: $word\n"
-      done
-
       # Obtain the element's type by using a JOIN
 
       result_properties_w_element_type=$( $PSQL "SELECT p.*, t.type
@@ -67,15 +59,9 @@ else
           INNER JOIN types t ON p.type_id = t.type_id
           WHERE atomic_number = $atomicNumber")
 
-      echo -e "\nNow checking the contents of result_properties_w_element_type: $result_properties_w_element_type\n"
-
       local -a result_properties_w_element_type_array
 
       IFS="|" read -r -a result_properties_w_element_type_array <<<"$result_properties_w_element_type"
-
-      for word in "${result_properties_w_element_type_array[@]}"; do
-        echo -e "Looping through elements of result_properties_w_element_type_array. Current element is: $word\n"
-      done
 
       echo "The element with atomic number ${result_elements_array[0]} is ${result_elements_array[2]} (${result_elements_array[1]}). It's a ${result_properties_array_w_element_type_array[5]}, with a mass of ${result_properties_array_w_element_type_array[1]} amu. ${result_elements_array[3]} has a melting point of ${result_properties_array_w_element_type_array[2]} celsius and a boiling point of ${result_properties_array_w_element_type_array[3]} celsius."
     fi
