@@ -1,3 +1,1 @@
-# This is the initial commit.
-
-# This script does not have any code.
+# This script has only be edited for the remote branch called "another_test".
