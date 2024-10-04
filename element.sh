@@ -2,6 +2,7 @@
 # For second commit
 # For third commit
 # For fourth commit
+# For the fifth commit
 
 # The script should only take one argument.
 
