@@ -1,6 +1,7 @@
 #! /bin/bash
 # For second commit
 # For third commit
+# For fourth commit
 
 # The script should only take one argument.
 
